@@ -1,63 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Himanshu Kombat</title>
-    <style>
-        body { font-family: Arial, sans-serif; background-color: #f0f0f0; }
-        #game { width: 600px; margin: auto; border: 2px solid #333; padding: 20px; background-color: #fff; }
-        .character { width: 100px; height: 100px; display: inline-block; margin-right: 20px; }
-        .health { font-size: 20px; }
-        button { padding: 10px 15px; margin-top: 10px; cursor: pointer; }
-    </style>
-</head>
-<body>
+<title>Flappy Bird</title>
 
-<div id="game">
-    <h1>Himanshu Kombat</h1>
-    <div id="characters">
-        <div class="character" id="player">👤<br><span class="health">Health: <span id="playerHealth">100</span></span></div>
-        <div class="character" id="enemy">👹<br><span class="health">Health: <span id="enemyHealth">100</span></span></div>
-    </div>
-    <button onclick="attack()">Attack!</button>
-    <p id="message"></p>
-</div>
 
-<script>
-let playerHealth = 100;
-let enemyHealth = 100;
 
-function attack() {
-    const playerDamage = Math.floor(Math.random() * 20) + 5;
-    const enemyDamage = Math.floor(Math.random() * 20) + 5;
-
-    enemyHealth -= playerDamage;
-    playerHealth -= enemyDamage;
-
-    document.getElementById('playerHealth').innerText = playerHealth;
-    document.getElementById('enemyHealth').innerText = enemyHealth;
-
-    let message = You dealt ${playerDamage} damage! Enemy dealt ${enemyDamage} damage!;
-    
-    if (playerHealth <= 0 && enemyHealth <= 0) {
-        message += " It's a draw!";
-        endGame();
-    } else if (playerHealth <= 0) {
-        message += " You lost!";
-        endGame();
-    } else if (enemyHealth <= 0) {
-        message += " You won!";
-        endGame();
-    }
-
-    document.getElementById('message').innerText = message;
-}
-
-function endGame() {
-   document.querySelector("button").disabled = true;
-}
-</script>
-
-</body>
-</html>
+<div id="game-container">
+    <h1>🔥Himanshu Kombat🔥</h1>
